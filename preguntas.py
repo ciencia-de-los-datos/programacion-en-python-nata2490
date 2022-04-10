@@ -252,7 +252,7 @@ def pregunta_07():
             resultado[valor]=[letras]
     resultado= [(key, letras) for key, letras in resultado.items()]
     resultado=sorted(resultado, key=itemgetter(0), reverse=False)
-    print(resultado)
+    #print(resultado)
     return resultado
 
 
@@ -295,7 +295,7 @@ def pregunta_08():
     #print(resultado)
     resultado= [(key, list(set(letras)))for key, letras in resultado.items()]
     resultado=sorted(resultado, key=itemgetter(0))
-    print(resultado)
+    #print(resultado)
     return resultado
    
 
