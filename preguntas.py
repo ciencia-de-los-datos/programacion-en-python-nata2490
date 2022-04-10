@@ -199,7 +199,7 @@ def pregunta_06():
     lista2=[]
     for item in  data:
         lista2+=item
-
+    #print(lista2)
     lista2=[tuple(str.split(':')) for str in lista2]
     #print(lista2)
     resultado={}
@@ -207,8 +207,9 @@ def pregunta_06():
         valor=int(valor)
         if letras in resultado.keys():
             resultado[letras].append(valor)
-    else:
-        resultado[letras]=[valor]
+        else:
+            resultado[letras]=[valor]
+    #print(resultado)
     resultado= [(key, min(val), max(val))for key, val in resultado.items()]
     resultado=sorted(resultado, key=itemgetter(0), reverse=False)
     #print(resultado)
@@ -251,7 +252,7 @@ def pregunta_07():
             resultado[valor]=[letras]
     resultado= [(key, letras) for key, letras in resultado.items()]
     resultado=sorted(resultado, key=itemgetter(0), reverse=False)
-    #print(resultado)
+    print(resultado)
     return resultado
 
 
@@ -284,17 +285,19 @@ def pregunta_08():
     data= [row.split('\t') for row in data]
     data= [row.replace('\n', '') for row in data]
     data= [(int(row[1]), row[0]) for row in data]
+    #print(data)
     resultado={}
     for valor, letras  in data:
         if valor in resultado.keys():
             resultado[valor].append(letras)
         else:
             resultado[valor]=[letras]
-    resultado= [(key, list(set(letras))) for key, letras in resultado.items()]
-    resultado=sorted(resultado, key=itemgetter(0), reverse=False)
     #print(resultado)
+    resultado= [(key, list(set(letras)))for key, letras in resultado.items()]
+    resultado=sorted(resultado, key=itemgetter(0))
+    print(resultado)
     return resultado
-
+   
 
 def pregunta_09():
     """
