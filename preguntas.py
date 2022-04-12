@@ -242,7 +242,7 @@ def pregunta_07():
         data= file.readlines()
    
     data= [row.split('\t') for row in data]
-    data= [row.replace('\n', '') for row in data]
+    #data= [row.replace('\n', '') for row in data]
     data= [(int(row[1]), row[0]) for row in data]
     resultado={}
     for valor, letras  in data:
@@ -283,7 +283,7 @@ def pregunta_08():
         data= file.readlines()
    
     data= [row.split('\t') for row in data]
-    data= [row.replace('\n', '') for row in data]
+    #data= [row.replace('\n', '') for row in data]
     data= [(int(row[1]), row[0]) for row in data]
     
     resultado={}
