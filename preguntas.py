@@ -285,7 +285,7 @@ def pregunta_08():
     data= [row.split('\t') for row in data]
     data= [row.replace('\n', '') for row in data]
     data= [(int(row[1]), row[0]) for row in data]
-    #print(data)
+    
     resultado={}
     for valor, letras  in data:
         if valor in resultado.keys():
@@ -294,6 +294,8 @@ def pregunta_08():
             resultado[valor]=[letras]
     #print(resultado)
     resultado= [(key, list(set(letras)))for key, letras in resultado.items()]
+    for k in range(0, len(resultado)):
+        resultado[k][1].sort()
     resultado=sorted(resultado, key=itemgetter(0))
     #print(resultado)
     return resultado
